@@ -232,5 +232,5 @@ class DiscordData(breadcord.helpers.HTTPModuleCog):
         await ctx.reply(**(await view.get_page()).unpack(), view=view)
 
 
-async def setup(bot: breadcord.Bot):
-    await bot.add_cog(DiscordData("discord_data"))
+async def setup(bot: breadcord.Bot, module: breadcord.module.Module) -> None:
+    await bot.add_cog(DiscordData(module.id))
